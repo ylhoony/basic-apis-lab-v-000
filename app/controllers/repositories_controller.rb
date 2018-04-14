@@ -14,5 +14,6 @@ class RepositoriesController < ApplicationController
   end
 
   def github_search
+    binding.pry
   end
 end
