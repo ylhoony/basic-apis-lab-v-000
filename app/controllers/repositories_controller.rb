@@ -21,6 +21,15 @@ class RepositoriesController < ApplicationController
       req.options.timeout = 120
     end
 
+    body = JSON.parse(@resp.body)
+    if @resp.success?
+      @repos = body
+    else
+      @error = body["meta"]["errorDetail"]
+    end
+
+    render 'search'
+
     binding.pry
   end
 end
