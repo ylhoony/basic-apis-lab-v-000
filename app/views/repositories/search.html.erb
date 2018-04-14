@@ -11,9 +11,9 @@
   <% elsif @repos %>
     <ul>
       <% @repos.each do |repo| %>
-        <li><%= repo.owner.name %></li>
-        <li><a href="<%= repo.html_url %>">See Repository</li>
-        <li><%= repo.description %></li>
+        <li><%= repo["name"] %></li>
+        <li><a href="<%= repo["html_url"] %>">See Repository</li>
+        <li><%= repo["description"] %></li>
         <hr>
       <% end %>
     </ul>
