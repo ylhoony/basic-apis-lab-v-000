@@ -14,12 +14,12 @@ class RepositoriesController < ApplicationController
 
     body = JSON.parse(@resp.body)
     if @resp.success?
-      @repos = body
+      @repos = body["items"]
     else
       @error = body["meta"]["errorDetail"]
     end
 
     render 'search'
-    
+
   end
 end
