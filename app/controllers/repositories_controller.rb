@@ -2,7 +2,10 @@ class RepositoriesController < ApplicationController
 
   def search
 
-    Faraday.get 'https://api.github.com/user/repos'
+    Faraday.get 'https://api.github.com/user/repos' do |req|
+      req.params['client_id'] = ''
+      req.params['client_secret'] = ''
+    end
 
     @resp = Faraday.get 'https://api.foursquare.com/v2/venues/search' do |req|
       req.params['client_id'] = ''
