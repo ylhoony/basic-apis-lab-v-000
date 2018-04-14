@@ -14,9 +14,6 @@ class RepositoriesController < ApplicationController
       end
 
       body = JSON.parse(@resp.body)
-
-      # binding.pry
-
       if @resp.success?
         @repos = body["items"]
       else
@@ -28,6 +25,5 @@ class RepositoriesController < ApplicationController
     end
 
     render 'search'
-
   end
 end
