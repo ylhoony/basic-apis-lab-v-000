@@ -21,7 +21,7 @@ class RepositoriesController < ApplicationController
     else
       @error = body["message"]
     end
-    
+
     render 'search'
 
   end
