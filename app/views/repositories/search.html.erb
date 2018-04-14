@@ -9,14 +9,6 @@
   <% if @error %>
     <p><%= @error %></p>
   <% elsif @repos %>
-    <ul>
-    <% @repos.each do |repo| %>
-      <li>
-        <%= venue["name"] %><br>
-        <%= venue["location"]["address"] %><br>
-        Checkins: <%= venue["stats"]["checkinsCount"] %>
-      </li>
-    <% end %>
-    </ul>
+    @repos
   <% end %>
 </div>
