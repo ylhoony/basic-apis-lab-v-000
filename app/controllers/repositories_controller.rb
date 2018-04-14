@@ -14,12 +14,14 @@ class RepositoriesController < ApplicationController
 
     body = JSON.parse(@resp.body)
 
+    binding.pry
+
     if @resp.success?
       @repos = body["items"]
     else
       @error = body["meta"]["errorDetail"]
     end
-    binding.pry
+    
     render 'search'
 
   end
